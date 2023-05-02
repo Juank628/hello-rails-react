@@ -4,9 +4,17 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Greeting from './components/Greeting';
 
 function App() {
-  return (<h1>Hello World!</h1>);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Greeting/>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 ReactDOM.render(

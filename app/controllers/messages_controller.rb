@@ -1,18 +1,18 @@
 class MessagesController < ApplicationController
-    def index
-        messages = Message.all
+  def index
+    messages = Message.all
 
-        if messages
-            render json: { data: messages }
-        end
-    end
+    return unless messages
 
-    def show
-        messages = Message.all
-        message = messages[rand(messages.length - 1)]
+    render json: { data: messages }
+  end
 
-        if message
-            render json: { data: message }
-        end
-    end
+  def show
+    messages = Message.all
+    message = messages[rand(messages.length - 1)]
+
+    return unless message
+
+    render json: { data: message }
+  end
 end
